@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: clauwittepipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clauwittepipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: clauwittepipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: clauwittepipelinesjavascriptdocker 
+          image: mycontainerregistryfortest.azurecr.io/clauwittepipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
